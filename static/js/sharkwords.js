@@ -75,11 +75,16 @@ const resetGame = () => {
   window.location = '/sharkwords';
 };
 
+const getRandomWord = () => {
+  let wordRandom = WORDS[Math.floor(Math.random() * WORDS.length)];
+  return wordRandom;
+};
 // This is like if __name__ == '__main__' in Python
 //
 (function startGame() {
-  // For now, we'll hardcode the word that the user has to guess.
-  const word = 'hello';
+  
+  let word = getRandomWord()
+  console.log(word)
 
   createDivsForChars(word);
   generateLetterButtons();
